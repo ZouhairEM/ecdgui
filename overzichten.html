@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>ECDGUI - Overzichten</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-tour.css" type="text/css">
+    <link rel="shortcut icon" href="images/icons/favicon.ico" type="text/css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script type="text/javascript" src="js/material.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel="stylesheet" href="css/material.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body oncontextmenu="return false;">
+    <div class="overviews-wrapper">
+        <div class="navigation-bar">
+            <div class="navigation_bar__left-section">
+                <p>ECDGUI</p>
+                <input type="button" class="button tour" onclick="startTour()" value="Neem de rondleiding" />
+            </div>
+            <div class="navigation_bar__right-section">
+                <div class="button toggleDarkMode">
+                    Onbemand
+                    <span class="material-icons">
+                        desktop_windows
+                    </span>
+                </div>
+                <div class="button">
+                    Afsluiten
+                    <span class="material-icons">
+                        close
+                    </span>
+                </div>
+                <p>Ingelogd</p>
+            </div>
+        </div>
+        <button class="open">
+            <span>
+                <i class="fa fa-bars"></i>
+            </span>
+        </button>
+        <!-- SIDEBAR -->
+        <div class="side-bar row" id="body-row">
+            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+                <ul class="list-group">
+                    <a href="dashboard.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">dashboard</span>
+                            <span class="menu-collapsed">Dashboard</span>
+                        </div>
+                    </a>
+                    <a href="monitoring.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">camera_indoor</span>
+                            <span class="menu-collapsed">Bewaking</span>
+                        </div>
+                    </a>
+                    <a href="geschiedenislog.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">history</span>
+                            <span class="menu-collapsed">Geschiedenis</span>
+                        </div>
+                    </a>
+                    <a href="overzichten.html" class="list-group-item list-group-item-action d-flex align-items-center active">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">grid_view</span>
+                            <span class="menu-collapsed">Overzichten</span>
+                        </div>
+                    </a>
+                    <a href="#" data-toggle="sidebar-colapse" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                            <span id="collapse-text" class="menu-collapsed">Inklappen</span>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="statusbalk-section">
+            <div class="statusbalkcontainer">
+                <div class="button">
+                    <a href="monitoring.html">
+                        Naar Bewaking
+                        <span class="material-icons">
+                            navigate_next
+                        </span>
+                    </a>
+                </div>
+                <div class="subtitlestatus">
+                    <span class="material-icons tabIcon">
+                        notifications
+                    </span>
+                    <span class="tabName">
+                        Openstaande alarmen
+                    </span>
+                    <span class="gauge">
+                        25
+                    </span>
+                </div>
+                <div class="statusAlarms">
+                    <div class="statusRecent">Laatste alarm</div>
+                    <div class="statusAlarm">
+                        <div class="meldingType akoestisch">
+                            <div class="meldingTypeIcon"><span class="material-icons akoestisch">hearing</span></div>
+                            <div class="meldingTypeName history">Akoestisch</div>
+                        </div>
+                    </div>
+                    <div class="statusTime"><span class="timerDiv"><time>0 min. sec. 0 </time></span> geleden</div>
+                    <div class="statusPrio">44</div>
+                </div>
+                <div class="statusAlarms">
+                    <div class="statusRecent">Urgentste alarm</div>
+                    <div class="statusAlarm">
+                        <div class="meldingType inactiviteit">
+                            <div class="meldingTypeIcon"><span class="material-icons inactiviteit">visibility_off</span></div>
+                            <div class="meldingTypeName history">inactiviteit</div>
+                        </div>
+                    </div>
+                    <div class="statusTime">1 min 13 sec. geleden</div>
+                    <div class="statusPrio">44</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-section">
+            <h1>Overzichten</h1>
+        </div>
+        <div class="date-section">
+            <p>Dinsdag 19 maart 2021 11:52</p>
+        </div>
+        <div class="kus-section">
+            <div class="blockTitle">
+                <img src="images/icons/overzichten/kus.png" style="width: 25px; margin-right: 15px; vertical-align: middle;" />
+                    Ku's
+                <div class="unPinOverview">
+                    Venster losmaken
+                    
+                </div>
+            </div>
+            <div class="blockContainer">
+                <ul class="overviewlist">
+                    <li>
+                        <img src="images/icons/overzichten/building.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Vestiging
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_up
+                        </span>
+                    </li>
+                    <li style="margin-left: 15px;">
+                        <img src="images/icons/overzichten/gebouw.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Gebouw 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_up
+                        </span>
+                    </li>
+                    <li style="margin-left: 30px;">
+                        <img src="images/icons/overzichten/afdeling.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Afdeling 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_up
+                        </span>
+                    </li>
+                    <li style="margin-left: 45px;">
+                        <img src="images/icons/overzichten/geluid.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        CIP 1009
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_up
+                        </span>
+                    </li>
+                    <li style="margin-left: 60px;">
+                        <img src="images/icons/overzichten/gebruiker.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        1009 Jansen
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_up
+                        </span>
+                    </li>
+                    <li style="margin-left: 30px;">
+                        <img src="images/icons/overzichten/afdeling.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Afdeling 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>                    
+                </ul>
+            </div>
+            <div class="button">
+                Inschakelen 
+                    <img src="images/icons/overzichten/power.png" style="background: white; border-radius: 50%; width: 18px; margin-left: 15px;vertical-align: middle;text-align: center;margin: 2px 0 auto 0;margin-left: 10px;" />
+            </div>
+            <div class="button">
+                Legenda 
+                    <img src="images/icons/overzichten/Group 1173.png" style="background: white; border-radius: 50%; width: 18px; margin-left: 15px;vertical-align: middle;text-align: center;margin: 2px 0 auto 0;margin-left: 10px;" />
+            </div>
+            <div class="button">
+                Bewoner zoeken 
+                    <img src="images/icons/overzichten/Group 719.png" style="background: white; border-radius: 50%; width: 18px; margin-left: 15px;vertical-align: middle;text-align: center;margin: 2px 0 auto 0;margin-left: 10px;" />
+            </div>
+        </div>
+
+        <div class="cameras-section">
+            <div class="blockTitle">
+                <img src="images/icons/overzichten/cameras.png" style="width: 25px; margin-right: 15px; vertical-align: middle;" />
+                Camerás
+                <div class="unPinOverview">
+                    Venster losmaken
+                    
+                </div>                
+            </div>
+            <div class="blockContainer">
+                <ul class="overviewlist">
+                    <li>
+                        <img src="images/icons/overzichten/building.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Vestiging
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 15px;">
+                        <img src="images/icons/overzichten/gebouw.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Gebouw 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_up
+                        </span>
+                    </li>
+                    <li style="margin-left: 15px;">
+                        <img src="images/icons/overzichten/gebouw.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Gebouw 2
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_up
+                        </span>
+                    </li>
+                    <li style="margin-left: 15px;">
+                        <img src="images/icons/overzichten/gebouw.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Gebouw 3
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_up
+                        </span>
+                    </li>                  
+                </ul>
+            </div>
+            <div class="button">
+                Tijdelijk uitschakelen 
+                    <img src="images/icons/overzichten/Group 1173.png" style="background: white; border-radius: 50%; width: 18px; margin-left: 15px;vertical-align: middle;text-align: center;margin: 2px 0 auto 0;margin-left: 10px;" />
+            </div>            
+        </div>
+        <div class="alarmeringen-section">
+            <div class="blockTitle" style="min-width: 10%;">
+                <img src="images/icons/overzichten/alarmeringen.png" style="width: 25px; margin-right: 15px; vertical-align: middle;" />
+                Alarmeringen
+                <div class="unPinOverview">
+                    Venster losmaken
+                    
+                </div>                
+            </div>
+            <div class="blockContainer">
+                <ul class="overviewlist">
+                    <li>
+                        <img src="images/icons/overzichten/building.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Vestiging
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 15px;">
+                        <img src="images/icons/overzichten/gebouw.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Gebouw 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 30px;">
+                        <img src="images/icons/overzichten/afdeling.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Afdeling 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 45px;">
+                        <img src="images/icons/overzichten/geluid.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        CIP 1009
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 60px;">
+                        <img src="images/icons/overzichten/gebruiker.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        1009 Jansen
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 30px;">
+                        <img src="images/icons/overzichten/afdeling.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Afdeling 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>                    
+                </ul>
+            </div>
+            <div class="button">
+                Verversen 
+                    <span class="material-icons">
+                        autorenew
+                    </span>                            
+            </div>             
+        </div>
+        <div class="sensoren-section">
+            <div class="blockTitle">
+                <img src="images/icons/overzichten/sensoren.png" style="width: 25px; margin-right: 15px; vertical-align: middle;" />
+                Sensoren
+                <div class="unPinOverview">
+                    Venster losmaken
+                    
+                </div>                
+            </div>
+            <div class="blockContainer">
+                <ul class="overviewlist">
+                    <li>
+                        <img src="images/icons/overzichten/building.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Vestiging
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 15px;">
+                        <img src="images/icons/overzichten/gebouw.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Gebouw 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 15px;">
+                        <img src="images/icons/overzichten/gebouw.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Gebouw 2
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 30px;">
+                        <img src="images/icons/overzichten/afdeling.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Afdeling 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 30px;">
+                        <img src="images/icons/overzichten/afdeling.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Afdeling 2
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 30px;">
+                        <img src="images/icons/overzichten/afdeling.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Afdeling 3
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 45px;">
+                        <img src="images/icons/overzichten/geluid.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        CIP 1009
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 60px;">
+                        <img src="images/icons/overzichten/gebruiker.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        1009 Jansen
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 30px;">
+                        <img src="images/icons/overzichten/afdeling.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Afdeling 4
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>                    
+                </ul>
+            </div>
+            <div class="button">
+                Tijdelijk uitschakelen 
+                    <img src="images/icons/overzichten/Group 1173.png" style="background: white; border-radius: 50%; width: 18px; margin-left: 15px;vertical-align: middle;text-align: center;margin: 2px 0 auto 0;margin-left: 10px;" />
+            </div>             
+        </div>
+        <div class="domotica-section">
+            <div class="blockTitle">
+                <img src="images/icons/overzichten/domotica.png" style="width: 25px; margin-right: 15px; vertical-align: middle;" />
+                Domotica
+                <div class="unPinOverview">
+                    Venster losmaken
+                    
+                </div>                
+            </div>
+            <div class="blockContainer">
+                <ul class="overviewlist">
+                    <li>
+                        <img src="images/icons/overzichten/building.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Vestiging
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 15px;">
+                        <img src="images/icons/overzichten/gebouw.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Gebouw 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 30px;">
+                        <img src="images/icons/overzichten/afdeling.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Afdeling 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 45px;">
+                        <img src="images/icons/overzichten/geluid.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        CIP 1009
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 60px;">
+                        <img src="images/icons/overzichten/gebruiker.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        1009 Jansen
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>
+                    <li style="margin-left: 30px;">
+                        <img src="images/icons/overzichten/afdeling.png" style="width: 20px; margin-right: 15px; vertical-align: middle;" />
+                        Afdeling 1
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                    </li>                    
+                </ul>
+            </div>
+            <div class="button">
+                Verversen 
+                    <span class="material-icons">
+                        autorenew
+                    </span>                            
+            </div>              
+        </div>
+        <div class="storingen-section">
+            <div class="blockTitle">
+                <img src="images/icons/overzichten/storingen.png" style="width: 25px; margin-right: 15px; vertical-align: middle;" />
+                Storingen
+                <div class="unPinOverview">
+                    Venster losmaken
+                    
+                </div>                
+            </div>
+            <div class="blockContainer">
+                <div class="box">
+                    Geen storingen
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap-tour.js"></script>
+    <script src="js/json.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

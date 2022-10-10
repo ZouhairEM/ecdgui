@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>ECDGUI - Monitoring</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-tour.css" type="text/css">
+    <link rel="shortcut icon" href="images/icons/favicon.ico" type="text/css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script type="text/javascript" src="js/material.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel="stylesheet" href="css/material.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body oncontextmenu="return false;">
+    <div class="grid-wrapper">
+        <div class="navigation-bar">
+            <div class="navigation_bar__left-section">
+                <p>ECDGUI</p>
+                <input type="button" class="button tour" onclick="startTour()" value="Neem de rondleiding" />                
+            </div>
+            <div class="navigation_bar__right-section">
+                
+                <div class="button">
+                    Onbemand
+                    <span class="material-icons">
+                        desktop_windows
+                    </span>
+                </div>
+                <div class="button">
+                    Afsluiten
+                    <span class="material-icons">
+                        close
+                    </span>
+                </div>
+                <p>Ingelogd</p>
+            </div>
+        </div>
+        <button class="open">
+            <span>
+                <i class="fa fa-bars"></i>
+            </span>
+        </button>        
+        <!-- SIDEBAR -->
+        <div class="side-bar row" id="body-row">
+            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+                <ul class="list-group">
+                    <a href="dashboard.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">dashboard</span>
+                            <span class="menu-collapsed">Dashboard</span>
+                        </div>
+                    </a>
+                    <a href="Monitoring.html" class="list-group-item list-group-item-action d-flex align-items-center active">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">camera_indoor</span>
+                            <span class="menu-collapsed">Monitoring</span>
+                        </div>
+                    </a>
+                    <a href="geschiedenislog.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">history</span>
+                            <span class="menu-collapsed">Geschiedenis</span>
+                        </div>
+                    </a>
+                    <a href="overzichten.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">grid_view</span>
+                            <span class="menu-collapsed">Overzichten</span>
+                        </div>
+                    </a>
+                    <a href="#" data-toggle="sidebar-colapse" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                            <span id="collapse-text" class="menu-collapsed">Inklappen</span>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="title-section">
+            <h1>Monitoring</h1>
+            <div class="alert">                
+            </div>
+        </div>
+        
+
+        <div class="date-section">
+            <p>Dinsdag 19 maart 2021 11:52</p>
+        </div>
+
+        <!-- MELDINGEN -->
+        <div class="notification-section">
+            <div class="subtitle">
+                <span class="material-icons tabIcon">
+                    notifications
+                </span>
+                <span class="tabName">
+                    Openstaande alarmen
+                </span>
+                <span class="tabNumber">
+                </span>
+            </div>
+            <table id="myTable" class="tablesorter">
+                <thead class="lint">
+                    <tr>
+                        <th class="lintPrioriteit">
+                            Niv
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="lintType">
+                            Type
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="lintBewoner">
+                            Cliënt
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="lintTijd">
+                            Tijd
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="lintStatus">
+                            Status
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="lintRuimte">
+                            Loc.
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="openstaandeMeldingen">
+                </tbody>
+            </table>
+        </div>
+        <!-- INLUISTEREN -->
+        <div class="inluister-section">
+            <div>
+                <div class="subtitle">
+                    <span class="material-icons tabIcon">
+                        notifications
+                    </span>
+                    <span class="tabName">
+                        Inluistermogelijkheden
+                    </span>
+
+                    <span class="pin">
+                        Vastpinnen
+                        <span class="material-icons pinIcon">
+                            push_pin
+                        </span>                     
+                    </span>
+                </div>
+            </div>     
+            <div class="button">Geluid inschakelen
+                <img src="images/icons/Group 5.svg"/>
+            </div>
+            <div class="button replay">Replay
+                <img src="images/icons/Group 6.svg"/>
+            </div>
+            <div class="button disabled">Stop
+                <img src="images/icons/Group 7.svg"/>
+            </div>
+            <div id="afmeldenMelding" class="button">Afmelden alarm
+                <img src="images/icons/Group 2.svg"/>
+            </div>
+            <div class="button">Tijdelijk uitschakelen
+                <img src="images/icons/Group 1.svg"/>
+            </div>
+            <div class="button">Afm. akoest. alarmen
+                <img src="images/icons/Group 11.svg"/>
+            </div>
+            <div class="button">Record
+                <img src="images/icons/Group 2.svg"/>
+            </div>
+            <div class="button">Deur ontgrendelen
+                <img src="images/icons/Group 9.svg"/>
+            </div>
+            <div class="button">Afm. beluisterde akoest.
+                <img src="images/icons/Group 4.svg"/>
+            </div>
+            <div class="button">Activeer volg. alarm
+                <img src="images/icons/Group 3.svg"/>
+            </div>
+            <div class="button">Afm. beluist. alarmen
+                <img src="images/icons/Group 11.svg"/>
+            </div>
+        </div>
+        <!-- CLIENTDOSSIER -->
+        <div class="client-dossier">
+            <div class="client-dossier__tab-section">
+                <input id="tab-one" type="radio" name="grp" checked />
+                <label for="tab-one" class="tab active">
+                    <span class="material-icons tabIcon">
+                        alarm
+                    </span>
+                    <span>
+                        Alarm
+                    </span>
+                </label>
+                <div class="client-dossier__panel-section alarm">
+
+
+
+                    <div class="dossier clear ms">
+                        <div class="client-dossier__tab_title">
+                            Cliëntinformatie
+                        </div>
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_up
+                        </span>
+                        <div class="content active">
+                            <div class="client-dossier__section populateOne">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dossier clear ms">
+                        <div class="client-dossier__tab_title">
+                            Aanvullende informatie
+                        </div>
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                        <div class="content clear">
+                            <div class="client-dossier__section populateTwo">
+                                <div class="box_container">
+                                    <p>Geboortedatum</p>
+                                    <div class="box">12/11/1951 (70 jo.)</div>
+                                </div>
+                                <div class="box_container">
+                                    <p>BSN-nummer</p>
+                                    <div class="box">20134523</div>
+                                </div>
+                                <div class="box_container">
+                                    <p>Zorgvraagniveau</p>
+                                    <div class="box">Hoog</div>
+                                </div>
+                                <div class="box_container">
+                                    <p>Vandaag/vorige/gem.</p>
+                                    <div class="box">24/5/10</div>
+                                </div>
+                                <div class="box_container">
+                                    <p>Aantal</p>
+                                    <div class="box">1</div>
+                                </div>
+                                <div class="box_container">
+                                    <p>Mededeling</p>
+                                    <div class="box">Naar PZI (0100)</div>
+                                </div>
+                                <div class="box_container">
+                                    <p>Status</p>
+                                    <div class="box">Geen geluid</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dossier clear ms">
+                        <div class="client-dossier__tab_title">
+                            Individueel zorgplan
+                        </div>
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                        <div class="content">
+                            <div class=" client-dossier__section">
+                            <div class="widebox_container">
+                                <div class="widebox">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dossier clear ms">
+                        <div class="client-dossier__tab_title">
+                            Contactpersoon
+                        </div>
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                        <div class="content clear">
+                            <div class=" client-dossier__section">
+                                <div class="box_container">
+                                    <p>Naam</p>
+                                    <div class="box">Jaap</div>
+                                </div>
+                                <div class="box_container">
+                                    <p>Relatie</p>
+                                    <div class="box">Broer</div>
+                                </div>
+                                <div class="box_container">
+                                    <p>Adres</p>
+                                    <div class="box">Dorpstraat 1, Zoeterzee</div>
+                                </div>
+                                <div class="box_container">
+                                    <p>Telefoon</p>
+                                    <div class="box">0071234567</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dossier clear ms">
+                        <div class="client-dossier__tab_title">
+                            Opmerkingen
+                        </div>
+                        <span class="material-icons iconSort collapseTab">
+                            keyboard_arrow_down
+                        </span>
+                        <div class="content">
+                            <div class=" client-dossier__section">
+                            <div class="widebox_container">
+                                <div class="widebox">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+            </div>
+        </div>
+        <input id="tab-two" type="radio" name="grp" />
+        <label for="tab-two" class="tab"> <span class="material-icons tabIcon">
+                location_on
+            </span>
+            Plattegrond</label>
+        <div class="client-dossier__panel-section plattegrondTab">
+            <div class="dossier ms">
+                <div class="client-dossier__tab_title">
+                    Plattegrond
+                </div>
+                <span class="material-icons iconSort collapseTab">
+                    keyboard_arrow_up
+                </span>
+                <div class="content active">
+                    <div class="bigbox" style="width: 100%; border-radius: inherit; min-height: 370px; background-image: url('images/misc/plattegrond.png');  background-repeat: no-repeat; background-position: center;"></div>
+                    <div class=" client-dossier__section">
+                        <div class="box_container">
+                            <p>Locatie</p>
+                            <div class="box">Locatie</div>
+                        </div>
+                        <div class="box_container">
+                            <p>Gebouw</p>
+                            <div class="box">Gebouw 1</div>
+                        </div>
+                        <div class="box_container">
+                            <p>Afdeling</p>
+                            <div class="box">2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input id="tab-three" type="radio" name="grp" />
+        <label for="tab-three" class="tab"> <span class="material-icons tabIcon">
+                video_camera_back
+            </span>Video</label>
+        <div class="client-dossier__panel-section videoTab">
+            <div class="dossier ms">
+                <div class="client-dossier__tab_title">
+                    Video
+                </div>
+                <span class="material-icons iconSort collapseTab">
+                    keyboard_arrow_up
+                </span>
+                <div class="content active">
+                    <div class="bigbox" style="width: 100%; border-radius: inherit; min-height: 370px; background-image: url('images/misc/videofootage.png');  background-repeat: no-repeat; background-position: center;"></div>
+                    <div class=" client-dossier__section">
+                        <div class="box_container cameras">
+                            <p style="margin-bottom: 15px;">Tweede beeldscherm</p>
+                            <input type="button" class="button" value="Camerahoek A" />                
+                            <input type="button" class="button" value="Camerahoek B" />                
+                            <input type="button" class="button" value="Camerahoek C" />                
+                            <input type="button" class="button" value="Camerahoek D" />                
+                            <input type="button" class="button" value="Camerahoek E" />                
+                            <input type="button" class="button" value="Camerahoek F" />                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input id="tab-four" type="radio" name="grp" />
+        <label for="tab-four" class="tab">
+            <span class="material-icons tabIcon">
+                settings
+            </span>
+            Cliënt instellingen
+        </label>
+        <div class="client-dossier__panel-section instellingenTab">
+            <div class="client-dossier__tab_title ms">
+                Cliënt instellingen
+            </div>
+            <div class="checkboxes clear">
+                <div class="client-dossier__section">
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Automatisch inluisteren</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Verhoogde prioriteit</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="" checked>
+                        <span>Extra attentie</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Inluisteren vervormen</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Gebruik alg. inluistertijd</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="" checked>
+                        <span>Terugspraak</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Terugspraaksignaal</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="" checked>
+                        <span>Akoestisch bewaken</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Akoestisch alarm</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Continu inluisteren</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ranges clear">
+                <div class="client-dossier__section">
+                    <div class="ranges_container">
+                        <div class="range_container">
+                            <span>Inluistervolume</span>
+                            <input type="range" class="range" min="1" max="100" value="65">
+                            <output class="bubble"></output>
+                        </div>
+                        <div class="range_container">
+                            <span>Gevoeligheid</span>
+                            <input type="range" class="range" min="1" max="100" value="75">
+                            <output class="bubble"></output>
+                        </div>
+                        <div class="range_container">
+                            <span>Inluistertijd</span>
+                            <input type="range" class="range" min="1" max="32" value="3">
+                            <output class="bubble">sec.</output>
+                        </div>
+                        <div class="range_container">
+                            <span>Terugspraakvolume</span>
+                            <input type="range" class="range" min="1" max="100" value="90">
+                            <output class="bubble"></output>
+                        </div>
+                        <div class="range_container">
+                            <span>Opnametijd</span>
+                            <input type="range" class="range" min="1" max="16" value="15">
+                            <output class="bubble">sec.</output>
+                        </div>
+                        <div class="range_container">
+                            <span>Tijd voor alarm</span>
+                            <input type="range" class="range" min="1" max="16" value="8">
+                            <output class="bubble">sec.</output>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="soundWaves clear">
+                <span>Geluidsgolven</span>
+                <div class="bigbox" style="width: 100%; background-image: url('images/misc/geluidsgolven.png');  background-repeat: no-repeat; background-position: center;"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap-tour.js"></script>
+    <script src="js/json.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

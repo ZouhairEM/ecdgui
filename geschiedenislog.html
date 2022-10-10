@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>ECDGUI - Geschiedenis</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-tour.css" type="text/css">
+    <link rel="shortcut icon" href="images/icons/favicon.ico" type="text/css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script type="text/javascript" src="js/material.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+    <script src="js/pager.js"></script>
+    <link href="js/pager.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel="stylesheet" href="css/material.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body oncontextmenu="return false;">
+    <div class="history-wrapper">
+        <div class="navigation-bar">
+            <div class="navigation_bar__left-section">
+                <p>ECDGUI</p>
+                <input type="button" class="button tour" onclick="startTour()" value="Neem de rondleiding" />
+            </div>
+            <div class="navigation_bar__right-section">
+                <div class="button toggleDarkMode">
+                    Onbemand
+                    <span class="material-icons">
+                        desktop_windows
+                    </span>
+                </div>
+                <div class="button">
+                    Afsluiten
+                    <span class="material-icons">
+                        close
+                    </span>
+                </div>
+                <p>Ingelogd</p>
+            </div>
+        </div>
+        <button class="open">
+            <span>
+                <i class="fa fa-bars"></i>
+            </span>
+        </button>
+        <!-- SIDEBAR -->
+        <div class="side-bar row" id="body-row">
+            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+                <ul class="list-group">
+                    <a href="dashboard.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">dashboard</span>
+                            <span class="menu-collapsed">Dashboard</span>
+                        </div>
+                    </a>
+                    <a href="monitoring.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">camera_indoor</span>
+                            <span class="menu-collapsed">Monitoring</span>
+                        </div>
+                    </a>
+                    <a href="geschiedenislog.html" class="list-group-item list-group-item-action d-flex align-items-center active">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">history</span>
+                            <span class="menu-collapsed">Geschiedenis</span>
+                        </div>
+                    </a>
+                    <a href="overzichten.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">grid_view</span>
+                            <span class="menu-collapsed">Overzichten</span>
+                        </div>
+                    </a>
+                    <a href="#" data-toggle="sidebar-colapse" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                            <span id="collapse-text" class="menu-collapsed">Inklappen</span>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="statusbalk-section">
+            <div class="statusbalkcontainer">
+                <div class="button">
+                    <a href="monitoring.html">
+                        Naar Monitoring
+                        <span class="material-icons">
+                            navigate_next
+                        </span>
+                    </a>
+                </div>
+                <div class="subtitlestatus">
+                    <span class="material-icons tabIcon">
+                        notifications
+                    </span>
+                    <span class="tabName">
+                        Openstaande alarmen
+                    </span>
+                    <span class="tabNumber">
+                    </span>
+                </div>
+                <div class="statusAlarms">
+                    <div class="statusRecent">Laatste alarm</div>
+                    <div class="statusAlarm">
+                        <div class="meldingType akoestisch">
+                            <div class="meldingTypeIcon"><span class="material-icons akoestisch">hearing</span></div>
+                            <div class="meldingTypeName history">Akoestisch</div>
+                        </div>
+                    </div>
+                    <div class="statusTime"><span class="timerDiv"><time>0 min. sec. 0 </time></span> geleden</div>
+                    <div class="statusPrio">44</div>
+                </div>
+                <div class="statusAlarms">
+                    <div class="statusRecent">Urgentste alarm</div>
+                    <div class="statusAlarm">
+                        <div class="meldingType inactiviteit">
+                            <div class="meldingTypeIcon"><span class="material-icons inactiviteit">visibility_off</span></div>
+                            <div class="meldingTypeName history">inactiviteit</div>
+                        </div>
+                    </div>
+                    <div class="statusTime">1 min 13 sec. geleden</div>
+                    <div class="statusPrio">44</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-section">
+            <h1>Geschiedenis</h1>
+        </div>
+        <div class="date-section">
+            <p>Dinsdag 19 maart 2021 11:52</p>
+        </div>
+        <!-- MELDINGEN -->
+        <div class="history-section">
+            <table id="myTable" class="tablesorter tablepager">
+                <thead class="historyLint">
+                    <tr>
+                        <th class="historyLintPrioriteit">
+                            Prio
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="historyLintType">
+                            Alarmtype
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="historyLintBewoner">
+                            Cliënt
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="historyLintTijd">
+                            Tijd
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="historyLintVerwerkt">
+                            Verwerkt
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="historyLintMededeling">
+                            Mededeling
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="historyLintStatus">
+                            Status binnenkomst
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                        <th class="historyLintRuimte">
+                            Ruimte
+                            <span class="material-icons iconSort">
+                                keyboard_arrow_down
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <div class="button filter">Geavanceerd zoeken</div>
+                <tbody id="geschiedenisMeldingen">
+                </tbody>
+                <script>
+                    $(function() {
+                    $('.tablesorter').tablesorter();
+                    $('.tablepager').tablepager();
+                });
+                </script>
+            </table>
+        </div>
+        <!-- INLUISTEREN -->
+        <div class="filter-section">
+            <div style="display: flex; justify-content: space-between;">
+                <div class="subTitle">
+                    Geavanceerd zoeken
+                </div>
+                <span class="button closeFilter">
+                    <span class="material-icons tabIcon" style="color: white; font-weight: bold">
+                        close
+                    </span>
+                </span>
+            </div>
+            <div class="filterContainer">
+                <div class="filterType">
+                    <p>Zoek op woord</p>
+                    <input type="text"  placeholder="Typ hier..."  id="typeField">
+                        <span class="material-icons tabIcon" style="color: white; font-weight: bold">
+                            search
+                        </span>
+                    </input>
+                </div>
+                <div class="filterBoxes">
+                    <p>Filteren</p>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Verhoogd zorgniveau</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Verhoogde prioriteit</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Slechthorenden</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Epilepsie</span>
+                    </div>
+                    <div class="checkbox_container">
+                        <input type="checkbox" class="checkbox" value="">
+                        <span>Senioren</span>
+                    </div>
+                </div>
+                <div class="filterDate">
+                    <p>Datum bereik</p>
+                    <div class="button">
+                        Start
+                        <span class="material-icons tabIcon" style="color: white;">
+                            date_range
+                        </span>
+                        <span style="margin: 0 15px">|</span>
+                        Eind
+                        <span class="material-icons tabIcon" style="color: white;">
+                            date_range
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap-tour.js"></script>
+    <script src="js/json.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

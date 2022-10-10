@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Group_377" data-name="Group 377" transform="translate(-26 -442)">
+    <g id="Bounding_Boxes" transform="translate(26 442)">
+      <path id="Path_2506" data-name="Path 2506" d="M0,0H24V24H0Z" fill="none"/>
+    </g>
+    <g id="Outline" transform="translate(28 444)">
+      <g id="Group_113" data-name="Group 113">
+        <g id="Group_112" data-name="Group 112">
+          <path id="Path_2507" data-name="Path 2507" d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.011,8.011,0,0,1,12,20Z" transform="translate(-2 -2)" fill="#fff"/>
+        </g>
+        <path id="Path_2508" data-name="Path 2508" d="M6.5,9,10,5.5,13.5,9H11v4H9V9Z" transform="translate(-2 -2)" fill="#fff"/>
+        <path id="Path_2509" data-name="Path 2509" d="M17.5,15,14,18.5,10.5,15H13V11h2v4Z" transform="translate(-2 -2)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

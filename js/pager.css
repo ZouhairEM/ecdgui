@@ -1,0 +1,44 @@
+@keyframes tablepager-anim {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.tablepager-pager {
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.tablepager-hide {
+    display: none;
+}
+
+.tablepager tr {
+    animation-name: tablesorter-anim;
+    animation-duration: 0.15s;
+}
+
+.tablepager-display {
+    width: 5em;
+    display: inline-block;
+    border: none;
+    background: none;
+    text-align: center;
+}
+
+.tablepager-pagesize {
+    display: none;
+    text-align: center;
+    width: 5em;
+    margin-left: 0.5em;
+}
+
+.tablepager-pager button {
+    text-align: center;
+}
+.tablepager-first, .tablepager-prev, .tablepager-next, .tablepager-last{
+    margin: 0 5px;
+    cursor: pointer;
+}

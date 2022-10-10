@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Group_371" data-name="Group 371" transform="translate(-26 -125)">
+    <g id="Group_164" data-name="Group 164" transform="translate(26 125)">
+      <path id="Path_3508" data-name="Path 3508" d="M0,0H24V24H0Z" fill="none"/>
+    </g>
+    <g id="camera_indoor-24px" transform="translate(26 125)">
+      <g id="Group_361" data-name="Group 361">
+        <path id="Path_3593" data-name="Path 3593" d="M0,0H24V24H0Z" fill="none"/>
+      </g>
+      <g id="Group_362" data-name="Group 362">
+        <path id="Path_3594" data-name="Path 3594" d="M12,3,4,9V21H20V9Zm4,13.06L14,15v1a1,1,0,0,1-1,1H9a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1v1l2-1.06Z" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

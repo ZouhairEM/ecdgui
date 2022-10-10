@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta content="" name="description" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>ECDGUI - Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-tour.css" type="text/css">
+    <link rel="shortcut icon" href="images/icons/favicon.ico" type="text/css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script type="text/javascript" src="js/material.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel="stylesheet" href="css/material.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+
+<body oncontextmenu="return false;">
+    <div class="dashboard-wrapper">
+        <div class="navigation-bar">
+            <div class="navigation_bar__left-section">
+                <p>ECDGUI</p>
+                <input type="button" class="button tour" onclick="startTour()" value="Neem de rondleiding" />
+            </div>
+            <div class="navigation_bar__right-section">
+                <div class="button">
+                    Onbemand
+                    <span class="material-icons">
+                        desktop_windows
+                    </span>
+                </div>
+                <div class="button">
+                    Afsluiten
+                    <span class="material-icons">
+                        close
+                    </span>
+                </div>
+                <p>Ingelogd</p>
+            </div>
+            <button class="open">
+                <span>
+                    <i class="fa fa-bars"></i>
+                </span>
+            </button>
+        </div>
+        <!-- SIDEBAR -->
+        <div class="side-bar row" id="body-row">
+            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+                <ul class="list-group">
+                    <a href="dashboard.html" class="list-group-item list-group-item-action d-flex align-items-center active">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">dashboard</span>
+                            <span class="menu-collapsed">Dashboard</span>
+                        </div>
+                    </a>
+                    <a href="monitoring.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">camera_indoor</span>
+                            <span class="menu-collapsed">Monitoring</span>
+                        </div>
+                    </a>
+                    <a href="geschiedenislog.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">history</span>
+                            <span class="menu-collapsed">Geschiedenis</span>
+                        </div>
+                    </a>
+                    <a href="overzichten.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="material-icons mr-3">grid_view</span>
+                            <span class="menu-collapsed">Overzichten</span>
+                        </div>
+                    </a>
+                    <a href="#" data-toggle="sidebar-colapse" class="list-group-item list-group-item-action d-flex align-items-center">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                            <span id="collapse-text" class="menu-collapsed">Inklappen</span>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="title-section">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="date-section">
+            <p>Dinsdag 19 maart 2021 11:52</p>
+        </div>
+        <!-- Dashboard -->
+        <div class="open-section">
+            <div class="blockTitle">
+                Openstaande alarmen
+            </div>
+            <div class="blockContainer">
+                <div class="block-count">
+                    17
+                </div>
+                <div class="block-button">
+                    <div class="button">
+                        <a href="monitoring.html">
+                            Naar Monitoring
+                            <span class="material-icons">
+                                navigate_next
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="favorites-section">
+            <div class="blockTitle">
+                <span class="material-icons">
+                    favorite
+                </span>
+                Favorieten
+            </div>
+            <div class="favoritesContainer">
+                <div class="favorites">
+                    <div class="block-button">
+                        <div class="button">
+                            Monitoring
+                            <span class="material-icons">
+                                camera_indoor
+                            </span>
+                        </div>
+                    </div>
+                    <div class="block-button">
+                        <div class="button">
+                            Sensoren
+                            <span class="material-icons">
+                                sensors
+                            </span>
+                        </div>
+                    </div>
+                    <div class="block-button">
+                        <div class="button">
+                            Bewoners
+                            <span class="material-icons">
+                                person
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="favoritesEdit">
+                    <span class="material-icons">
+                        add
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="settings-section">
+            <div class="blockTitle">
+                <span class="material-icons">
+                    favorite
+                </span>
+                Dashboard instellingen
+            </div>
+            <div>
+                <span class="material-icons dashboardIcon">
+                    dashboard
+                </span>
+            </div>
+        </div>
+        <div class="total-section">
+            <div class="blockTitle">
+                Totaal alarmen
+            </div>
+            <div class="blockContainer">
+                <div class="block-count">
+                    2931
+                </div>
+                <div class="block-button">
+                    <div class="button">
+                        Vanaf gisteren
+                        <span class="material-icons">
+                            create
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tips-section">
+            <div class="blockTitle">
+                <span class="material-icons">
+                    lightbulb
+                </span>
+                Tip van de dag
+            </div>
+            <div class="blockContainer">
+                <div class="block-text">
+                    Met behulp van risico analyse kan de akoestische gevoeligheid (geluidsniveau) per bewoner op instelbare tijdstippen worden geregeld.
+                </div>
+                <div class="block-button">
+                    <div class="button">
+                        <span class="material-icons">
+                            arrow_left
+                        </span>
+                    </div>
+                    <div class="button">
+                        <span class="material-icons">
+                            arrow_right
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chart-section" style="display: none;">
+            <div class="blockTitle">
+                <span class="material-icons">
+                    stacked_bar_chart
+                </span>
+                <span style="display: flex;justify-content: space-between;width: 100%;">
+                Aantal meldingen
+                <span>Uren</span>
+                <span>Dagen</span>
+                <span style="color: #04b799; font-weight: bold;">Weken</span>
+                </span>
+            </div>
+            <!-- <img src="images/grafiek.png" class="grafiek" > -->
+        </div>
+        <div class="alarms-section">
+            <div class="blockTitle">
+                Hoogst openstaande alarmen
+            </div>
+        <a href="monitoring.html">
+            <table id="myTable">
+                <thead class="dashboardLint">
+                    <tr>
+                        <th class="lintPrioriteit dashboard">
+                            Niv
+                        </th>
+                        <th class="lintType dashboard">
+                            Type
+                        </th>
+                        <th class="lintBewoner dashboard">
+                            Cliënt
+                        </th>
+                        <th class="lintTijd dashboard">
+                            Tijd
+                        </th>
+                        <th class="lintStatus dashboard">
+                            Status
+                        </th>
+                        <th class="lintRuimte dashboard">
+                            Loc.
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="dashboardMelding">
+                        <td class="prio dashboard">87</td>
+                        <td class="meldingType technisch dashboard">
+                            <div class="meldingTypeIcon">
+                                <span class="material-icons technisch">
+                                    cable
+                                </span>
+                            </div>
+                            <div class="meldingTypeName dashboard">Technisch alarm</div>
+                        </td>
+                        <td class="meldingBewoner dashboard">
+                            <div class="meldingBewonerName dashboard">Jan van Bergen</div>
+                        </td>
+                        <td class="meldingTijd dashboard">
+                            0:14:42
+                        </td>
+                        <td class="meldingStatus dashboard">
+                            <div class="meldingStatusIcon dashboard">
+                                <span class="material-icons">
+                                    check
+                                </span>
+                            </div>
+                            <div class="meldingStatusName dashboard">
+                                Klaar
+                            </div>
+                        </td>
+                        <td class="meldingRuimte dashboard">
+                            011-A
+                        </td>
+                    </tr>
+                    <tr class="dashboardMelding">
+                        <td class="prio dashboard">
+                            85
+                        </td>
+                        <td class="meldingType akoestisch dashboard">
+                            <div class="meldingTypeIcon">
+                                <span class="material-icons akoestisch">
+                                    hearing
+                                </span>
+                            </div>
+                            <div class="meldingTypeName dashboard">Akoestisch</div>
+                        </td>
+                        <td class="meldingBewoner dashboard">
+                            <div class="meldingBewonerName dashboard">Bram Hartsman</div>
+                        </td>
+                        <td class="meldingTijd dashboard">91:10:22</td>
+                        <td class="meldingStatus dashboard">
+                            <div class="meldingStatusIcon dashboard">
+                                <span class="material-icons">
+                                    autorenew
+                                </span>
+                            </div>
+                            <div class="meldingStatusName dashboard">Automatisch</div>
+                        </td>
+                        <td class="meldingRuimte dashboard">
+                            221-C
+                        </td>
+                    </tr>
+                    <tr class="dashboardMelding dashboard">
+                        <td class="prio dashboard">
+                            80
+                        </td>
+                        <td class="meldingType inactiviteit dashboard">
+                            <div class="meldingTypeIcon">
+                                <span class="material-icons inactiviteit">
+                                    visibility_off
+                                </span>
+                            </div>
+                            <div class="meldingTypeName dashboard">Inactiviteit</div>
+                        </td>
+                        <td class="meldingBewoner dashboard">
+                            <div class="meldingBewonerName dashboard">Tobias de Ridder</div>
+                        </td>
+                        <td class="meldingTijd dashboard">0:13:48</td>
+                        <td class="meldingStatus dashboard">
+                            <div class="meldingStatusIcon dashboard">
+                                <span class="material-icons">
+                                    check
+                                </span>
+                            </div>
+                            <div class="meldingStatusName dashboard">Klaar</div>
+                        </td>
+                        <td class="meldingRuimte dashboard">
+                            32-A
+                        </td>
+                    </tr>
+                    <tr class="dashboardMelding dashboard">
+                        <td class="prio dashboard">
+                            80
+                        </td>
+                        <td class="meldingType inactiviteit dashboard">
+                            <div class="meldingTypeIcon dashboard">
+                                <span class="material-icons inactiviteit">
+                                    visibility_off
+                                </span>
+                            </div>
+                            <div class="meldingTypeName dashboard">Inactiviteit</div>
+                        </td>
+                        <td class="meldingBewoner dashboard">
+                            <div class="meldingBewonerName dashboard">Martijn van Ritselhof</div>
+                        </td>
+                        <td class="meldingTijd dashboard">0:15:33</td>
+                        <td class="meldingStatus dashboard">
+                            <div class="meldingStatusIcon dashboard">
+                                <span class="material-icons">
+                                    autorenew
+                                </span>
+                            </div>
+                            <div class="meldingStatusName dashboard">Automatisch</div>
+                        </td>
+                        <td class="meldingRuimte dashboard">
+                            30
+                        </td>
+                    </tr>
+                    <tr class="dashboardMelding dashboard">
+                        <td class="prio dashboard">
+                            75
+                        </td>
+                        <td class="meldingType naarWC dashboard">
+                            <div class="meldingTypeIcon dashboard">
+                                <span class="material-icons naarWC">
+                                    wc
+                                </span>
+                            </div>
+                            <div class="meldingTypeName dashboard">Naar WC</div>
+                        </td>
+                        <td class="meldingBewoner dashboard">
+                            <div class="meldingBewonerName dashboard">Suzanne de Jager</div>
+                        </td>
+                        <td class="meldingTijd dashboard">0:07:33</td>
+                        <td class="meldingStatus dashboard">
+                            <div class="meldingStatusIcon dashboard">
+                                <span class="material-icons">
+                                    notifications
+                                </span>
+                            </div>
+                            <div class="meldingStatusName dashboard">Alarm</div>
+                        </td>
+                        <td class="meldingRuimte dashboard">
+                            101-A
+                        </td>
+                    </tr>
+                    <tr class="dashboardMelding">
+                        <td class="prio dashboard">
+                            72
+                        </td>
+                        <td class="meldingType videoBeweging dashboard">
+                            <div class="meldingTypeIcon dashboard">
+                                <span class="material-icons videoBeweging">
+                                    directions_run
+                                </span>
+                            </div>
+                            <div class="meldingTypeName dashboard">Video Beweging</div>
+                        </td>
+                        <td class="meldingBewoner dashboard">
+                            <div class="meldingBewonerName dashboard">Yvonne Lottemaker</div>
+                        </td>
+                        <td class="meldingTijd dashboard">0:06:19</td>
+                        <td class="meldingStatus dashboard">
+                            <div class="meldingStatusIcon dashboard">
+                                <span class="material-icons">
+                                    autorenew
+                                </span>
+                            </div>
+                            <div class="meldingStatusName dashboard">Automatisch</div>
+                        </td>
+                        <td class="meldingRuimte dashboard">
+                            11-B
+                        </td>
+                    </tr>
+                    <tr class="dashboardMelding">
+                        <td class="prio dashboard">
+                            65
+                        </td>
+                        <td class="meldingType waterMelder dashboard">
+                            <div class="meldingTypeIcon dashboard">
+                                <span class="material-icons waterMelder">
+                                    water
+                                </span>
+                            </div>
+                            <div class="meldingTypeName dashboard">Watermelder</div>
+                        </td>
+                        <td class="meldingBewoner dashboard">
+                            <div class="meldingBewonerName dashboard">Bert van Hageman</div>
+                        </td>
+                        <td class="meldingTijd dashboard">0:09:23</td>
+                        <td class="meldingStatus dashboard">
+                            <div class="meldingStatusIcon dashboard">
+                                <span class="material-icons">
+                                    autorenew
+                                </span>
+                            </div>
+                            <div class="meldingStatusName dashboard">Automatisch</div>
+                        </td>
+                        <td class="meldingRuimte dashboard">
+                            72
+                        </td>
+                    </tr>
+                    <tr class="dashboardMelding">
+                        <td class="prio dashboard">
+                            60
+                        </td>
+                        <td class="meldingType reminder dashboard">
+                            <div class="meldingTypeIcon dashboard">
+                                <span class="material-icons reminder">
+                                    speaker_notes
+                                </span>
+                            </div>
+                            <div class="meldingTypeName dashboard">Reminder</div>
+                        </td>
+                        <td class="meldingBewoner dashboard">
+                            <div class="meldingBewonerName dashboard">Elizabeth de Guzman</div>
+                        </td>
+                        <td class="meldingTijd dashboard">1:54:58</td>
+                        <td class="meldingStatus dashboard">
+                            <div class="meldingStatusIcon dashboard">
+                                <span class="material-icons">
+                                    autorenew
+                                </span>
+                            </div>
+                            <div class="meldingStatusName dashboard">Automatisch</div>
+                        </td>
+                        <td class="meldingRuimte dashboard">
+                            11-A
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+                </a>
+        </div>
+        <!-- <img src="images/footer_illustratie.png" style="position: absolute; width: 150px; bottom: 2vh;right: 1vw;" /> -->
+    </div>
+    <div id="myModal" class="modal">
+        <div id="myModalContainer">
+            <div class="modal-content settings-panel">
+                <div class="subTitle-section">
+                    <h1>Dashboard instellingen</h1>
+                </div>
+
+                <div class="dashboard-settings-container">
+                    <div class="blocks-switches">
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">Openstaande meldingen</div>                       
+                            <div class="block-switch">
+                                <span class="block-switch-off">Niet weergeven</span>   
+                                <label class="switch">
+                                    <input type="checkbox" checked><span class="slider round"></span>
+                                </label>  
+                                <span class="block-switch-on">Weergeven</span>   
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">Totaal aantal meldingen</div>                       
+                            <div class="block-switch">
+                                <span class="block-switch-off">Niet weergeven</span>   
+                                <label class="switch">
+                                    <input type="checkbox" checked><span class="slider round"></span>
+                                </label>  
+                                <span class="block-switch-on">Weergeven</span>   
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">Bewoners uit bed</div>                       
+                            <div class="block-switch">
+                                <span class="block-switch-off">Niet weergeven</span>   
+                                <label class="switch">
+                                    <input type="checkbox"><span class="slider round"></span>
+                                </label>  
+                                <span class="block-switch-on">Weergeven</span>   
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">Recente meldingen</div>                       
+                            <div class="block-switch">
+                                <span class="block-switch-off">Niet weergeven</span>   
+                                <label class="switch">
+                                    <input type="checkbox" checked><span class="slider round"></span>
+                                </label>  
+                                <span class="block-switch-on">Weergeven</span>   
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name tipvandedag">Tip van de dag</div>                       
+                            <div class="block-switch">
+                                <span class="block-switch-off">Niet weergeven</span>   
+                                <label class="switch">
+                                    <input type="checkbox" checked><span class="slider round"></span>
+                                </label>  
+                                <span class="block-switch-on">Weergeven</span>   
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">Meldingen per type</div>                       
+                            <div class="block-switch">
+                                <span class="block-switch-off">Niet weergeven</span>   
+                                <label class="switch">
+                                    <input type="checkbox"><span class="slider round"></span>
+                                </label>  
+                                <span class="block-switch-on">Weergeven</span>   
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">Favorieten</div>                       
+                            <div class="block-switch">
+                                <span class="block-switch-off">Niet weergeven</span>   
+                                <label class="switch">
+                                    <input type="checkbox" checked><span class="slider round"></span>
+                                </label>  
+                                <span class="block-switch-on">Weergeven</span>   
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">Grafiek aantal meldingen</div>                       
+                            <div class="block-switch grafiek">
+                                <span class="block-switch-off">Niet weergeven</span>   
+                                <label class="switch">
+                                    <input type="checkbox" checked><span class="slider round"></span>
+                                </label>  
+                                <span class="block-switch-on">Weergeven</span>   
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">Recent gebruikt</div>                       
+                            <div class="block-switch">
+                                <span class="block-switch-off">Niet weergeven</span>   
+                                <label class="switch">
+                                    <input type="checkbox"><span class="slider round"></span>
+                                </label>  
+                                <span class="block-switch-on">Weergeven</span>   
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">Medewerkers per team</div>                       
+                            <div class="block-switch">
+                                <span class="block-switch-off">Niet weergeven</span>   
+                                <label class="switch">
+                                    <input type="checkbox"><span class="slider round"></span>
+                                </label>  
+                                <span class="block-switch-on">Weergeven</span>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-settings">
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">               
+                            <span class="material-icons">
+                                dark_mode
+                            </span>    Nachtmodus</div>                       
+                            <div class="block-switch">
+                                <span class="block-switch-off">Uit</span>   
+                                <label class="switch">
+                                    <input type="checkbox"><span class="slider round toggleDarkMode"></span>
+                                </label>  
+                                <span class="block-switch-on">Aan</span>   
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="blocks-switch">
+                            <div class="blocks-switch-name">               
+                            <span class="material-icons">
+                                font_download
+                            </span>    Lettergrootte</div>
+                                <span class="block-switch-text">70%</span>   
+                            <input type="range" class="letter range" min="1" max="100" value="65">
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap-tour.js"></script>
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/json.js"></script>
+</body>
+
+</html>
